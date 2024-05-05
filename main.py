@@ -11,7 +11,7 @@ pygame.display.set_caption("Игра Тир")
 icon=pygame.image.load("img/tir.jpg")
 pygame.display.set_icon(icon)
 
-target_img = icon=pygame.image.load("img/target.png")
+target_img = icon=pygame.image.load("img/tar.png")
 target_width = 80
 target_height = 80
 
@@ -26,10 +26,11 @@ while running:
           if event.type == pygame.QUIT:
               running = False
           if event.type == pygame.MOUSEBUTTONDOWN:
-              mouse_x,mouse_y=pygame.mouse.get.pos()
+              mouse_x, mouse_y = pygame.mouse.get_pos()
               if target_x< mouse_x <target_x + target_width and target_y< mouse_y <target_y + target_height:
                   target_x = random.randint(0, SCREEN_WIDTH - target_width)
                   target_y = random.randint(0, SCREEN_HEIGHT - target_height)
-                  pygame.display.update()
-                  screen.blit(target_img, (target_x, target_y))
+      screen.blit(target_img, (target_x, target_y))
+      pygame.display.update()
+
 pygame.quit()
